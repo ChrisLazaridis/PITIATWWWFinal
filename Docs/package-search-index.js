@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.Beans.Users"},{"l":"com.Beans.Util"},{"l":"com.db"},{"l":"com.Servlets"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"module_name","l":"com.Beans.Users"},{"m":"module_name","l":"com.Beans.Util"},{"m":"module_name","l":"com.db"},{"m":"module_name","l":"com.Servlets"}];updateSearchResults();

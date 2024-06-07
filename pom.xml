@@ -63,6 +63,15 @@
                     <target>21</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <sourcepath>${project.basedir}/src/main/java</sourcepath>
+                    <classpath>${project.basedir}/target/classes</classpath>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

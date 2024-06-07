@@ -5,7 +5,10 @@ import com.Beans.Users.Seller;
 import com.Beans.Util.PhoneNumber;
 import com.Beans.Util.Program;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**

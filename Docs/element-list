@@ -1,3 +1,4 @@
+module:module_name
 com.Beans.Users
 com.Beans.Util
 com.db
