@@ -64,103 +64,100 @@
     </form>
 </header>
 
-<div class="container">
-    <h1>Edit Client Information</h1>
+<div class="container mt-4">
+    <h2>Edit Client Information</h2>
 
     <form method="POST" action='<%=request.getContextPath()%>/seller-servlet' name="frmEditClient">
         <input type="hidden" name="action" value="edit"/>
         <input type="hidden" name="ClientID" value="<%= clientToEdit.getClientId() %>"/>
 
+        <!-- First Name -->
         <div class="form-group row">
-            <%--@declare id="firstname"--%><label for="FirstName" class="col-sm-2 col-form-label">FirstName</label>
+            <label for="FirstName" class="col-sm-2 col-form-label">First Name</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="FirstName" placeholder="Enter FirstName"
-                       value="<%= clientToEdit.getFirstName() %>" required>
+                <input type="text" id="FirstName" class="form-control" name="FirstName" placeholder="Enter First Name" value="<%= clientToEdit.getFirstName() %>" required>
             </div>
         </div>
 
+        <!-- Last Name -->
         <div class="form-group row">
-            <%--@declare id="lastname"--%><label for="LastName" class="col-sm-2 col-form-label">LastName</label>
+            <label for="LastName" class="col-sm-2 col-form-label">Last Name</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="LastName" placeholder="Enter LastName"
-                       value="<%= clientToEdit.getLastName() %>" required>
+                <input type="text" id="LastName" class="form-control" name="LastName" placeholder="Enter Last Name" value="<%= clientToEdit.getLastName() %>" required>
             </div>
         </div>
 
+        <!-- Email -->
         <div class="form-group row">
-            <%--@declare id="email"--%><label for="Email" class="col-sm-2 col-form-label">Email</label>
+            <label for="Email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-7">
-                <input type="email" class="form-control" name="Email" placeholder="Enter Email"
-                       value="<%= clientToEdit.getEmail() %>" required>
+                <input type="email" id="Email" class="form-control" name="Email" placeholder="Enter Email" value="<%= clientToEdit.getEmail() %>" required>
             </div>
         </div>
 
+        <!-- Username -->
         <div class="form-group row">
-            <%--@declare id="username"--%><label for="Username" class="col-sm-2 col-form-label">Username</label>
+            <label for="Username" class="col-sm-2 col-form-label">Username</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="Username" placeholder="Enter Username"
-                       value="<%= clientToEdit.getUsername() %>" required>
+                <input type="text" id="Username" class="form-control" name="Username" placeholder="Enter Username" value="<%= clientToEdit.getUsername() %>" required>
             </div>
         </div>
 
+        <!-- Password -->
         <div class="form-group row">
-            <%--@declare id="Password"--%><label for="Password" class="col-sm-2 col-form-label">Password</label>
+            <label for="Password" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-7">
                 <input type="password" class="form-control" name="Password" id="Password" placeholder="Enter Password">
-                <input type="checkbox" onclick="myFunction()">Show Password</input>
             </div>
-        </div>
-        <div class="form-group row">
-            <%--@declare id="Password2"--%><label for="Password2" class="col-sm-2 col-form-label">Repeat
-            Password</label>
-            <div class="col-sm-7">
-                <input type="password" class="form-control" name="Password2" id="Password2"
-                       placeholder="Enter Password">
-                <input type="checkbox" onclick="myFunction2()">Show Password</input>
+            <div class="col-sm-3">
+                <button class="btn btn-outline-secondary" type="button" onclick="myFunction()">Show</button>
             </div>
         </div>
 
+        <!-- Repeat Password -->
         <div class="form-group row">
-            <%--@declare id="birthday"--%><label for="Birthday" class="col-sm-2 col-form-label">Birthday</label>
+            <label for="Password2" class="col-sm-2 col-form-label">Repeat Password</label>
             <div class="col-sm-7">
-                <label>
-                    <input type="date" class="form-control" name="Birthday"
-                           value="<%= new SimpleDateFormat("yyyy-MM-dd").format(clientToEdit.getBirthday()) %>"
-                           required>
-                </label>
+                <input type="password" class="form-control" name="Password2" id="Password2" placeholder="Repeat Password">
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-outline-secondary" type="button" onclick="myFunction2()">Show</button>
             </div>
         </div>
 
+        <!-- Birthday -->
         <div class="form-group row">
-            <%--@declare id="vat"--%><label for="VAT" class="col-sm-2 col-form-label">VAT</label>
+            <label for="Birthday" class="col-sm-2 col-form-label">Birthday</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="VAT" placeholder="Enter VAT"
-                       value="<%= clientToEdit.getVAT() %>" required>
+                <input type="date" id="Birthday" class="form-control" name="Birthday" value="<%= new SimpleDateFormat("yyyy-MM-dd").format(clientToEdit.getBirthday()) %>" required>
             </div>
         </div>
 
+        <!-- VAT -->
         <div class="form-group row">
-            <label for="PhoneNumber" class="col-sm-2 col-form-label">PhoneNumber</label>
+            <label for="VAT" class="col-sm-2 col-form-label">VAT</label>
+            <div class="col-sm-7">
+                <input type="text" id="VAT" class="form-control" name="VAT" placeholder="Enter VAT" value="<%= clientToEdit.getVAT() %>" required>
+            </div>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group row">
+            <label for="PhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
             <div class="col-sm-7">
                 <select id="phoneNumber" class="form-control" name="PhoneNumber" onchange="updateProgramInfo()">
                     <% for (PhoneNumber p : clientToEdit.getPhoneNumbers()) { %>
-                    <option value="<%= p.getPhoneNumber() %>" data-program="<%= p.getProgram().getProgramName() %>">
-                        <%= p.getPhoneNumber() %>
-                    </option>
+                    <option value="<%= p.getPhoneNumber() %>" data-program="<%= p.getProgram().getProgramName() %>"><%= p.getPhoneNumber() %></option>
                     <% } %>
                 </select>
             </div>
             <div class="col-sm-3">
-                <button type="button" class="btn btn-primary btn-square ml-2"
-                        onclick="window.location.href='seller-servlet?action=addPhone&clientUn=<%=clientToEdit.getUsername()%>';">
-                    +
-                </button>
-                <button type="button" id="deleteButton" class="btn btn-primary btn-square ml-2"
-                        onclick="updateDeleteButtonUrl();">
-                    -
-                </button>
+                <button type="button" class="btn btn-primary btn-square ml-2" onclick="window.location.href='seller-servlet?action=addPhone&clientUn=<%=clientToEdit.getUsername()%>';">+</button>
+                <button type="button" id="deleteButton" class="btn btn-primary btn-square ml-2" onclick="updateDeleteButtonUrl();">-</button>
             </div>
         </div>
+
+        <!-- Phone Number Program -->
         <div class="form-group row mt-2">
             <div class="col-sm-2"></div>
             <div class="col-sm-7">
@@ -172,19 +169,24 @@
             </div>
         </div>
 
+        <!-- Program -->
         <div class="form-group row">
             <label for="Program" class="col-sm-2 col-form-label">Program</label>
             <div class="col-sm-7">
                 <select id="program" class="form-control" name="Program">
                     <% for (Program p : programs) { %>
-                    <option value="<%= p.getProgramID()%>"><%= p.getProgramName()%>
-                    </option>
+                    <option value="<%= p.getProgramID()%>"><%= p.getProgramName()%></option>
                     <% } %>
                 </select>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- Submit Button -->
+        <div class="form-group row">
+            <div class="col-sm-7 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
     </form>
 </div>
 <script>

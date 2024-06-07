@@ -3,7 +3,7 @@
 <%@ page import="com.db.*" %>
 <%@ page import="com.Beans.Users.Client" %>
 <%@ page import="com.Beans.Users.Seller" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     ClientDB clientDB;
     try {
@@ -17,7 +17,12 @@
         return;
     }
     Seller seller = (Seller) session.getAttribute("seller");
-    ArrayList<Program> programms = clientDB.getAllPrograms();
+    ArrayList<Program> programms = null;
+    try {
+        programms = clientDB.getAllPrograms();
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }s
 %>
 <!DOCTYPE html>
 <html>
@@ -33,68 +38,81 @@
     <form method="POST" action='<%=request.getContextPath()%>/seller-servlet' name="frmAddClient">
         <input type="hidden" name="action" value="insert"/>
 
+        <!-- First Name -->
         <div class="form-group row">
-            <%--@declare id="firstname"--%><label for="FirstName" class="col-sm-2 col-form-label">FirstName</label>
+            <label for="FirstName" class="col-sm-2 col-form-label">First Name</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="FirstName" placeholder="Enter FirstName" required>
+                <input type="text" id="FirstName"class="form-control" name="FirstName" placeholder="Enter First Name" required>
             </div>
         </div>
 
+        <!-- Last Name -->
         <div class="form-group row">
-            <%--@declare id="lastname"--%><label for="LastName" class="col-sm-2 col-form-label">LastName</label>
+            <label for="LastName" class="col-sm-2 col-form-label">Last Name</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="LastName" placeholder="Enter LastName" required>
+                <input type="text" id="LastName" class="form-control" name="LastName" placeholder="Enter Last Name" required>
             </div>
         </div>
 
+        <!-- Email -->
         <div class="form-group row">
-            <%--@declare id="email"--%><label for="Email" class="col-sm-2 col-form-label">Email</label>
+            <label for="Email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-7">
-                <input type="email" class="form-control" name="Email" placeholder="Enter Email" required>
+                <input type="email" id="Email" class="form-control" name="Email" placeholder="Enter Email" required>
             </div>
         </div>
 
+        <!-- Username -->
         <div class="form-group row">
-            <%--@declare id="username"--%><label for="Username" class="col-sm-2 col-form-label">Username</label>
+            <label for="Username" class="col-sm-2 col-form-label">Username</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="Username" placeholder="Enter Username" required>
+                <input type="text" id="Username" class="form-control" name="Username" placeholder="Enter Username" required>
             </div>
         </div>
 
+        <!-- Password -->
         <div class="form-group row">
-            <%--@declare id="Password"--%><label for="Password" class="col-sm-2 col-form-label">Password</label>
+            <label for="Password" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-7">
-                <input type="password" id="Password" class="form-control" name="Password" placeholder="Enter Password">
-                <input type="checkbox" onclick="myFunction()">Show Password</input>
+                <input type="password" class="form-control" name="Password" id="Password" placeholder="Enter Password">
             </div>
-        </div>
-        <div class="form-group row">
-            <%--@declare id="Password2"--%><label for="Password2" class="col-sm-2 col-form-label">Repeat
-            Password</label>
-            <div class="col-sm-7">
-                <input type="password" class="form-control" name="Password2" id="Password2"
-                       placeholder="Enter Password">
-                <input type="checkbox" onclick="myFunction2()">Show Password</input>
+            <div class="col-sm-3">
+                <button class="btn btn-outline-secondary" type="button" onclick="myFunction()">Show</button>
             </div>
         </div>
 
+        <!-- Repeat Password -->
         <div class="form-group row">
-            <%--@declare id="birthday"--%><label for="Birthday" class="col-sm-2 col-form-label">Birthday</label>
+            <label for="Password2" class="col-sm-2 col-form-label">Repeat Password</label>
             <div class="col-sm-7">
-                <input type="date" class="form-control" name="Birthday" required>
+                <input type="password" class="form-control" name="Password2" id="Password2" placeholder="Repeat Password">
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-outline-secondary" type="button" onclick="myFunction2()">Show</button>
             </div>
         </div>
 
+        <!-- Birthday -->
         <div class="form-group row">
-            <%--@declare id="vat"--%><label for="VAT" class="col-sm-2 col-form-label">VAT</label>
+            <label for="Birthday" class="col-sm-2 col-form-label">Birthday</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="VAT" placeholder="Enter VAT" required>
+                <input type="date" id="Birthday" class="form-control" name="Birthday" required>
             </div>
         </div>
 
+        <!-- VAT -->
+        <div class="form-group row">
+            <label for="VAT" class="col-sm-2 col-form-label">VAT</label>
+            <div class="col-sm-7">
+                <input type="text" id="VAT" class="form-control" name="VAT" placeholder="Enter VAT" required>
+            </div>
+        </div>
+
+        <!-- Program -->
         <div class="form-group row">
             <label for="Program" class="col-sm-2 col-form-label">Program</label>
             <div class="col-sm-7">
+                <label for="Program" class="col-form-label">Select Program</label>
                 <select id="program" class="form-control" name="Program">
                     <% for (Program p : programms) { %>
                     <option value="<%= p.getProgramID()%>"><%= p.getProgramName()%>
@@ -104,7 +122,12 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- Submit Button -->
+        <div class="form-group row">
+            <div class="col-sm-7 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
     </form>
 </div>
 <script>
