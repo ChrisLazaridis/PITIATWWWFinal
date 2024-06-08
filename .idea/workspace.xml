@@ -10,12 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="Made javadocs">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/SellerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/SellerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/addClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addClient.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/editClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editClient.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/showAllPrograms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/showAllPrograms.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,22 +74,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 10.1.232.executor": "Run",
-    "git-widget-placeholder": "Master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.232.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="PITIATWWW2.1" />
@@ -210,7 +212,12 @@
       <workItem from="1717722196558" duration="80000" />
       <workItem from="1717722286432" duration="3796000" />
       <workItem from="1717726256728" duration="19000" />
-      <workItem from="1717728224424" duration="2296000" />
+      <workItem from="1717728224424" duration="2311000" />
+      <workItem from="1717761419981" duration="165000" />
+      <workItem from="1717762714510" duration="38000" />
+      <workItem from="1717764016664" duration="1506000" />
+      <workItem from="1717833627663" duration="2424000" />
+      <workItem from="1717836081023" duration="4001000" />
     </task>
     <task id="LOCAL-00001" summary="Made javadocs">
       <option name="closed" value="true" />
@@ -220,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717729385118</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Made javadocs">
+      <option name="closed" value="true" />
+      <created>1717730536838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717730536838</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

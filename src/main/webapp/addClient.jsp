@@ -22,7 +22,7 @@
         programms = clientDB.getAllPrograms();
     } catch (Exception e) {
         throw new RuntimeException(e);
-    }s
+    }
 %>
 <!DOCTYPE html>
 <html>

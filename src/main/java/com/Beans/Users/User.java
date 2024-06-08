@@ -156,9 +156,7 @@ public class User implements java.io.Serializable {
      * @param email η διεύθυνση email
      */
     public void setEmail(String email) {
-        if (isEmailValid(email)) {
-            this.email = email;
-        }
+        this.email = email;
     }
 
     /**
@@ -218,7 +216,7 @@ public class User implements java.io.Serializable {
      * @throws IllegalArgumentException Εάν η διεύθυνση email δεν είναι έγκυρη
      */
     public static boolean isEmailValid(String email) {
-        if (!email.matches("[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z]+")) {
+        if (!email.matches(".+@[a-zA-Z0-9]+%.[a-zA-Z]+")) {
             throw new IllegalArgumentException("Email address is not valid");
         }
         return true;

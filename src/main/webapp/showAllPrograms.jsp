@@ -55,7 +55,6 @@
                     <td><%= String.format("%.2f €", p.getCostPerMinute()) %>
                     </td>
                     <td><%= String.format("%.2f €", p.getCostPerSMS()) %>
-                    </td>s
                     </td>
                     <td><%= p.getAvailableMinutes()%>
                     </td>
@@ -68,7 +67,7 @@
                 </tbody>
             </table>
             <button type="button" class="btn btn-success"
-                    onclick="window.location.href='/seller.jsp?%>';">Back to clients list
+                    onclick="window.location.href='seller.jsp?%>';">Back to clients list
             </button>
         </div>
     </div>

@@ -110,7 +110,6 @@ public class SellerServlet extends HttpServlet {
                 String clientUn = request.getParameter("clientUn");
                 Client client = clientDB.searchClient(clientUn);
                 generateRandomPhoneNumber(client, clientDB.searchProgramByID(11));
-                phoneNumbersOfClient.add(client.getPhoneNumbers().getLast());
                 phoneNumbersOfClient = client.getPhoneNumbers();
                 request.setAttribute("client", client);
             } else if (action.equalsIgnoreCase("deletePhone")){
@@ -122,7 +121,9 @@ public class SellerServlet extends HttpServlet {
                 for (PhoneNumber p : phoneNumbers) {
                     if (p.getPhoneNumber().equals(phoneNumber)) {
                         client.removePhoneNumber(phoneNumber);
-                        clientDB.deletePhoneNumber(p);
+                        if(clientDB.checkIfPhoneNumberExists(phoneNumber)){
+                            clientDB.deletePhoneNumber(p);
+                        }
                         break;
                     }
                 }
