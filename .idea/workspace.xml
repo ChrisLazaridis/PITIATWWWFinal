@@ -9,16 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="Made javadocs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/SellerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/SellerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addClient.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/editClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editClient.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/showAllPrograms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/showAllPrograms.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="DDDDONE" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,12 +32,12 @@
     &quot;assignee&quot;: &quot;ChrisLazaridis&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ChrisLazaridis/PITIATWWWFinal.git&quot;,
-    &quot;accountId&quot;: &quot;7043fba8-fc29-4226-9253-e4729464a9b0&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ChrisLazaridis/PITIATWWWFinal.git",
+    "accountId": "7043fba8-fc29-4226-9253-e4729464a9b0"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -81,6 +72,7 @@
     &quot;git-widget-placeholder&quot;: &quot;Master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/claza/PycharmProjects/DataFillerPITIATWWW&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -218,6 +210,11 @@
       <workItem from="1717764016664" duration="1506000" />
       <workItem from="1717833627663" duration="2424000" />
       <workItem from="1717836081023" duration="4001000" />
+      <workItem from="1717842438109" duration="452000" />
+      <workItem from="1717861760085" duration="118000" />
+      <workItem from="1717861970750" duration="86000" />
+      <workItem from="1717862318111" duration="59000" />
+      <workItem from="1717976437634" duration="937000" />
     </task>
     <task id="LOCAL-00001" summary="Made javadocs">
       <option name="closed" value="true" />
@@ -235,7 +232,47 @@
       <option name="project" value="LOCAL" />
       <updated>1717730536838</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="DDDDONE">
+      <option name="closed" value="true" />
+      <created>1717842474407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717842474407</updated>
+    </task>
+    <task id="LOCAL-00004" summary="DDDDONE">
+      <option name="closed" value="true" />
+      <created>1717976863680</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717976863680</updated>
+    </task>
+    <task id="LOCAL-00005" summary="DDDDONE">
+      <option name="closed" value="true" />
+      <created>1717977075201</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717977075201</updated>
+    </task>
+    <task id="LOCAL-00006" summary="DDDDONE">
+      <option name="closed" value="true" />
+      <created>1717977211798</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717977211798</updated>
+    </task>
+    <task id="LOCAL-00007" summary="DDDDONE">
+      <option name="closed" value="true" />
+      <created>1717977305554</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717977305554</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +280,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made javadocs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made javadocs" />
+    <MESSAGE value="DDDDONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="DDDDONE" />
   </component>
 </project>
