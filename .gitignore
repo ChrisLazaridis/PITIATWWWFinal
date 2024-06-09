@@ -36,3 +36,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Database ###
+database/uservault(Data Only).sql
+database/uservault(with data).sql
+database/user_credentials.txt

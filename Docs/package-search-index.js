@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"module_name","l":"com.Beans.Users"},{"m":"module_name","l":"com.Beans.Util"},{"m":"module_name","l":"com.db"},{"m":"module_name","l":"com.Servlets"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"PITIATWWW","l":"com.Beans.Users"},{"m":"PITIATWWW","l":"com.Beans.Util"},{"m":"PITIATWWW","l":"com.db"},{"m":"PITIATWWW","l":"com.Servlets"}];updateSearchResults();
