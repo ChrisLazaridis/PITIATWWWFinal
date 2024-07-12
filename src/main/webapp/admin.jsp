@@ -13,15 +13,15 @@
 <%@ page import="com.db.SellerDB" %>
 <%@ page import="com.Beans.Util.Bill" %>
 <%@ page import="com.Beans.Users.Admin" %>
-<%
 
+<%
     session = request.getSession(false);
     if (session == null || session.getAttribute("admin") == null) {
         response.sendRedirect("login.jsp");
         return;
     }
 
-    // Get seller from session
+    // Get admin from session
     Admin admin = (Admin) session.getAttribute("admin");
     ArrayList<Seller> sellers = admin.getSellersBelow();
 %>
@@ -33,41 +33,44 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Show All Sellers</title>
-
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Admin Hub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="admin-servlet?action=insertProgram">Add Program</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin-servlet?action=editProgram">Edit Programs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin-servlet?action=insertSeller">Add Seller</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" action="${pageContext.request.contextPath}/logout-servlet" method="get">
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <header class="container-fluid mt-3 mb-3">
     <div class="row">
         <div class="col-md-6">
             <!-- Username -->
-            <h1><%= admin.getUsername() %>
-            </h1>
-            <!-- Logout button -->
-            <form action="${pageContext.request.contextPath}/logout-servlet" method="get">
-                <button class="btn btn-danger" type="submit">Logout</button>
-            </form>
-        </div>
-        <div class="col-md-6 d-flex flex-column align-items-end">
-            <!-- Buttons -->
-            <button type="button" class="btn btn-dark mb-2"
-                    onclick="window.location.href='admin-servlet?action=insertProgram';">
-                Add Program
-            </button>
-            <button type="button" class="btn btn-dark"
-                    onclick="window.location.href='admin-servlet?action=editProgram';">
-                Edit Programs
-            </button>
-            <button type="button" class="btn btn-dark"
-                    onclick="window.location.href='admin-servlet?action=insertSeller';">
-                Add Seller
-            </button>
+            <h1><%= admin.getUsername() %></h1>
         </div>
     </div>
 </header>
 
 <div class="container">
     <table class="table table-striped">
-
         <thead class="thead-dark">
         <tr>
             <th scope="col">Name</th>
@@ -80,30 +83,22 @@
         <tbody>
         <% for (Seller s : sellers) { %>
         <tr>
-            <th scope="row"><%= s.getFirstName() %>
-            </th>
-            <td><%= s.getLastName() %>
-            </td>
-            <td><%= s.getEmail() %>
-            </td>
-            <td><%= s.getBirthday() %>
-            </td>
+            <th scope="row"><%= s.getFirstName() %></th>
+            <td><%= s.getLastName() %></td>
+            <td><%= s.getEmail() %></td>
+            <td><%= s.getBirthday() %></td>
             <td>
-            <button type="button" class="btn btn-success"
-                    onclick="window.location.href='admin-servlet?action=editSeller&sellerUn=<%= s.getUsername()%>';">
-                Update
-            </button>
-
-            <button type="button" class="btn btn-warning"
-                    onclick="confirmDeleteSeller('<%= s.getUsername() %>');">
-                Delete
-            </button>
+                <button type="button" class="btn btn-success" onclick="window.location.href='admin-servlet?action=editSeller&sellerUn=<%= s.getUsername()%>';">
+                    Update
+                </button>
+                <button type="button" class="btn btn-warning" onclick="confirmDeleteSeller('<%= s.getUsername() %>');">
+                    Delete
+                </button>
             </td>
         </tr>
         <% } %>
         </tbody>
     </table>
-
 </div>
 <script type="text/javascript">
     function confirmDeleteSeller(sellerUn) {

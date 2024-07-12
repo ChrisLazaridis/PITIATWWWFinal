@@ -9,25 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="DDDDONE">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/AdminServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/ClientServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addProgram.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addSeller.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/callHistory.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/client.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/editProgram.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/editSeller.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/smsHistory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="3rd part v1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Util/Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Util/Call.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Util/SMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Util/SMS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/ClientDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/ClientDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addClient.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/callHistory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/callHistory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/client.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/client.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/editClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editClient.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/seller.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/showAllPrograms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/showAllPrograms.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/smsHistory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/smsHistory.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +232,8 @@
       <workItem from="1719865696744" duration="721000" />
       <workItem from="1719866785384" duration="231000" />
       <workItem from="1720785509238" duration="75000" />
-      <workItem from="1720785612280" duration="13932000" />
+      <workItem from="1720785612280" duration="14076000" />
+      <workItem from="1720823361893" duration="1731000" />
     </task>
     <task id="LOCAL-00001" summary="Made javadocs">
       <option name="closed" value="true" />
@@ -315,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717977587895</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="3rd part v1">
+      <option name="closed" value="true" />
+      <created>1720802434122</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720802434122</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +335,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made javadocs" />
     <MESSAGE value="DDDDONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="DDDDONE" />
+    <MESSAGE value="3rd part v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="3rd part v1" />
   </component>
 </project>

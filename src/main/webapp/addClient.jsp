@@ -4,6 +4,7 @@
 <%@ page import="com.Beans.Users.Client" %>
 <%@ page import="com.Beans.Users.Seller" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%
     ClientDB clientDB;
     try {
@@ -30,11 +31,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Add new Client</title>
+    <title>Add New Client</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="seller.jsp">Seller Hub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline" action="${pageContext.request.contextPath}/logout-servlet" method="get">
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <div class="container">
-    <h1>Add Client</h1>
+    <h1 class="mt-3">Add Client</h1>
     <form method="POST" action='<%=request.getContextPath()%>/seller-servlet' name="frmAddClient">
         <input type="hidden" name="action" value="insert"/>
 
@@ -42,7 +59,7 @@
         <div class="form-group row">
             <label for="FirstName" class="col-sm-2 col-form-label">First Name</label>
             <div class="col-sm-7">
-                <input type="text" id="FirstName"class="form-control" name="FirstName" placeholder="Enter First Name" required>
+                <input type="text" id="FirstName" class="form-control" name="FirstName" placeholder="Enter First Name" required>
             </div>
         </div>
 
@@ -115,8 +132,7 @@
                 <label for="Program" class="col-form-label">Select Program</label>
                 <select id="program" class="form-control" name="Program">
                     <% for (Program p : programms) { %>
-                    <option value="<%= p.getProgramID()%>"><%= p.getProgramName()%>
-                    </option>
+                    <option value="<%= p.getProgramID() %>"><%= p.getProgramName() %></option>
                     <% } %>
                 </select>
             </div>
@@ -130,6 +146,7 @@
         </div>
     </form>
 </div>
+
 <script>
     function myFunction() {
         const x = document.getElementById("Password");
@@ -149,7 +166,7 @@
         }
     }
 
-    Window.addEventListener('load', function () {
+    window.addEventListener('load', function () {
         document.frmAddClient.addEventListener('submit', function (e) {
             if (!passwordCheck()) {
                 e.preventDefault();

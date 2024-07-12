@@ -31,7 +31,6 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <table class="table table-striped">
-
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">Program ID</th>
@@ -46,29 +45,18 @@
                 <tbody>
                 <% for (Program p : programms) { %>
                 <tr>
-                    <th scope="row"><%= p.getProgramID()%>
-                    </th>
-                    <td><%= p.getProgramName()%>
-                    </td>
-                    <td><%= String.format("%.2f €", p.getFixedCost()) %>
-                    </td>
-                    <td><%= String.format("%.2f €", p.getCostPerMinute()) %>
-                    </td>
-                    <td><%= String.format("%.2f €", p.getCostPerSMS()) %>
-                    </td>
-                    <td><%= p.getAvailableMinutes()%>
-                    </td>
-                    <td><%= p.getAvailableSMS()%>
-                    </td>
+                    <th scope="row"><%= p.getProgramID() %></th>
+                    <td><%= p.getProgramName() %></td>
+                    <td><%= String.format("%.2f €", p.getFixedCost()) %></td>
+                    <td><%= String.format("%.2f €", p.getCostPerMinute()) %></td>
+                    <td><%= String.format("%.2f €", p.getCostPerSMS()) %></td>
+                    <td><%= p.getAvailableMinutes() %></td>
+                    <td><%= p.getAvailableSMS() %></td>
                 </tr>
-
-                <%}%>
-
+                <% } %>
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success"
-                    onclick="window.location.href='seller.jsp?%>';">Back to clients list
-            </button>
+            <button type="button" class="btn btn-success" onclick="window.location.href='seller.jsp';">Back to clients list</button>
         </div>
     </div>
 </div>

@@ -30,15 +30,33 @@
     <title>Client Hub</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Client Hub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="callHistory.jsp">Call History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="smsHistory.jsp">SMS History</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" action="${pageContext.request.contextPath}/logout-servlet" method="get">
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <header class="container-fluid mt-3 mb-3">
     <div class="row">
         <div class="col-md-6">
             <!-- Username -->
             <h1><%= client.getUsername() %></h1>
-            <!-- Logout button -->
-            <form action="${pageContext.request.contextPath}/logout-servlet" method="get">
-                <button class="btn btn-danger" type="submit">Logout</button>
-            </form>
         </div>
     </div>
 </header>
@@ -86,7 +104,5 @@
         </tbody>
     </table>
 </div>
-<button class="btn btn-primary" onclick="window.location.href='callHistory.jsp'">Call History</button>
-<button class="btn btn-primary" onclick="window.location.href='smsHistory.jsp'">SMS History</button>
 </body>
 </html>

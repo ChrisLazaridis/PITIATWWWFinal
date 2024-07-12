@@ -56,13 +56,21 @@
     <title>Edit Client</title>
 </head>
 <body>
-<header>
-    <h1>Edit Client</h1>
-    <!-- Logout button -->
-    <form action="logout-servlet" method="get">
-        <button type="submit">Logout</button>
-    </form>
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="seller.jsp">Seller Hub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline" action="${pageContext.request.contextPath}/logout-servlet" method="get">
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <div class="container mt-4">
     <h2>Edit Client Information</h2>
@@ -190,7 +198,7 @@
     </form>
 </div>
 <script type="text/javascript">
-    Window.addEventListener('load', function () {
+    window.addEventListener('load', function () {
         document.frmEditClient.addEventListener('submit', function (e) {
             if (!passwordCheck()) {
                 e.preventDefault();
@@ -244,9 +252,6 @@
             window.location.href = url;
         }
     }
-
-    // Call the function once to set the initial URL
-    updateDeleteButtonUrl();
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

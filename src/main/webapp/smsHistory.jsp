@@ -49,18 +49,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Call History</title>
+    <title>SMS History</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="client.jsp">Client Hub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="callHistory.jsp">Call History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="smsHistory.jsp">SMS History</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" action="${pageContext.request.contextPath}/logout-servlet" method="get">
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <header class="container-fluid mt-3 mb-3">
     <div class="row">
         <div class="col-md-6">
             <!-- Username -->
             <h1><%= client.getUsername() %></h1>
-            <!-- Logout button -->
-            <form action="${pageContext.request.contextPath}/logout-servlet" method="get">
-                <button class="btn btn-danger" type="submit">Logout</button>
-            </form>
         </div>
     </div>
 </header>

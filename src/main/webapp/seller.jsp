@@ -5,8 +5,8 @@
 <%@ page import="com.Beans.Util.PhoneNumber" %>
 <%@ page import="com.db.ClientDB" %>
 <%@ page import="com.Beans.Util.Bill" %>
-<%
 
+<%
     session = request.getSession(false);
     if (session == null || session.getAttribute("seller") == null) {
         response.sendRedirect("login.jsp");
@@ -24,38 +24,42 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Show All Sellers</title>
-
+    <title>Show All Clients</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Seller Hub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="seller-servlet?action=insert&sellerUn=<%=seller.getUsername()%>">Add Client!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="showAllPrograms.jsp?&sellerUn=<%=seller.getUsername()%>">See all available programs</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" action="${pageContext.request.contextPath}/logout-servlet" method="get">
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <header class="container-fluid mt-3 mb-3">
     <div class="row">
         <div class="col-md-6">
             <!-- Username -->
-            <h1><%= seller.getUsername() %>
-            </h1>
-            <!-- Logout button -->
-            <form action="${pageContext.request.contextPath}/logout-servlet" method="get">
-                <button class="btn btn-danger" type="submit">Logout</button>
-            </form>
-        </div>
-        <div class="col-md-6 d-flex flex-column align-items-end">
-            <!-- Buttons -->
-            <button type="button" class="btn btn-dark mb-2"
-                    onclick="window.location.href='seller-servlet?action=insert&sellerUn=<%=seller.getUsername()%>';">
-                Add Client!
-            </button>
-            <button type="button" class="btn btn-dark"
-                    onclick="window.location.href='showAllPrograms.jsp?&sellerUn=<%=seller.getUsername()%>';">
-                See all available programs
-            </button>
+            <h1><%= seller.getUsername() %></h1>
         </div>
     </div>
 </header>
 
 <div class="container">
     <table class="table table-striped">
-
         <thead class="thead-dark">
         <tr>
             <th scope="col">Name</th>
@@ -63,7 +67,7 @@
             <th scope="col">Email</th>
             <th scope="col">Birthday</th>
             <th scope="col">Phone Numbers</th>
-            <th scope="col">debts</th>
+            <th scope="col">Debts</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -102,12 +106,10 @@
                 <%= formattedDebt %>
             </td>
             <td>
-                <button type="button" class="btn btn-success"
-                        onclick="window.location.href='seller-servlet?action=edit&sellerUn=<%=seller.getUsername()%>&clientUn=<%= c.getUsername()%>';">
+                <button type="button" class="btn btn-success" onclick="window.location.href='seller-servlet?action=edit&sellerUn=<%=seller.getUsername()%>&clientUn=<%= c.getUsername()%>';">
                     Update
                 </button>
-                <button type="button" class="btn btn-warning"
-                        onclick="confirmDeleteClient('<%=seller.getUsername()%>', '<%= c.getUsername() %>');">
+                <button type="button" class="btn btn-warning" onclick="confirmDeleteClient('<%=seller.getUsername()%>', '<%= c.getUsername() %>');">
                     Delete
                 </button>
             </td>
@@ -115,7 +117,6 @@
         <% } %>
         </tbody>
     </table>
-
 </div>
 <script type="text/javascript">
     function confirmDeleteClient(sellerUn, clientUn) {
