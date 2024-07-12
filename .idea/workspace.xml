@@ -9,7 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="DDDDONE" />
+    <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="DDDDONE">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/AdminServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/ClientServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/addProgram.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/addSeller.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/callHistory.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/client.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/editProgram.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/editSeller.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/smsHistory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Util/Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Util/Call.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Util/SMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Util/SMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/ClientDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/ClientDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,13 +37,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="module-info" />
+        <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -32,12 +53,12 @@
     &quot;assignee&quot;: &quot;ChrisLazaridis&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ChrisLazaridis/PITIATWWWFinal.git",
-    "accountId": "7043fba8-fc29-4226-9253-e4729464a9b0"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ChrisLazaridis/PITIATWWWFinal.git&quot;,
+    &quot;accountId&quot;: &quot;7043fba8-fc29-4226-9253-e4729464a9b0&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -188,8 +209,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -215,6 +236,12 @@
       <workItem from="1717861970750" duration="86000" />
       <workItem from="1717862318111" duration="59000" />
       <workItem from="1717976437634" duration="937000" />
+      <workItem from="1717977399119" duration="355000" />
+      <workItem from="1718668942047" duration="3000" />
+      <workItem from="1719865696744" duration="721000" />
+      <workItem from="1719866785384" duration="231000" />
+      <workItem from="1720785509238" duration="75000" />
+      <workItem from="1720785612280" duration="13932000" />
     </task>
     <task id="LOCAL-00001" summary="Made javadocs">
       <option name="closed" value="true" />
@@ -272,11 +299,38 @@
       <option name="project" value="LOCAL" />
       <updated>1717977305554</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="DDDDONE">
+      <option name="closed" value="true" />
+      <created>1717977492059</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717977492059</updated>
+    </task>
+    <task id="LOCAL-00009" summary="DDDDONE">
+      <option name="closed" value="true" />
+      <created>1717977587895</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717977587895</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made javadocs" />

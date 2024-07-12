@@ -23,7 +23,7 @@ public class ClientDB {
      * Δημιουργεί ένα νέο αντικείμενο ClientDB.
      * Αρχικοποιεί ένα αντικείμενο Database.
      */
-    public ClientDB(){
+    public ClientDB() {
         db = new Database("root", "jdbc:mysql://localhost/uservault", "12345678PITIATwww$");
     }
 
@@ -114,7 +114,7 @@ public class ClientDB {
      * @return true αν το τηλέφωνο υπάρχει, αλλιώς false
      * @throws SQLException εάν υπάρξει σφάλμα κατά τον έλεγχο του τηλεφώνου
      */
-    public boolean checkIfPhoneNumberExists(String PhoneNumber) throws SQLException{
+    public boolean checkIfPhoneNumberExists(String PhoneNumber) throws SQLException {
         db.refreshConnection();
         String query = "SELECT * FROM phonenumbers WHERE phone_number = ?";
         try (Connection connection = db.getConnection();
@@ -135,7 +135,8 @@ public class ClientDB {
 
     /**
      * Βοηθητική συνάρτηση για την εισαγωγή των στοιχείων του πελάτη στη βάση
-     * @param client ο πελάτης
+     *
+     * @param client    ο πελάτης
      * @param statement το statement εισαγωγής ή ανανέωσης του πελάτη στη βάση
      * @throws SQLException εάν υπάρξει σφάλμα κατά την επικοινωνία με τη βάση
      */
@@ -155,7 +156,7 @@ public class ClientDB {
      * @param client ο πελάτης
      * @throws SQLException εάν υπάρξει σφάλμα κατά την επικοινωνία με τη βάση
      */
-    public void getClientId(Client client) throws SQLException{
+    public void getClientId(Client client) throws SQLException {
         db.refreshConnection();
         String query = "SELECT client_id FROM clients WHERE username = ?";
         try (Connection connection = db.getConnection();
@@ -202,7 +203,7 @@ public class ClientDB {
 
         // Add phone numbers after collecting them
         for (PhoneNumber phoneNumber : phoneNumbersToAdd) {
-            if(checkIfPhoneNumberExists(phoneNumber.getPhoneNumber())) {
+            if (checkIfPhoneNumberExists(phoneNumber.getPhoneNumber())) {
                 changeProgramForPhoneNumber(phoneNumber, phoneNumber.getProgram());
             } else {
                 addPhoneNumber(phoneNumber, client);
@@ -336,7 +337,7 @@ public class ClientDB {
 
         // Add phone numbers after collecting them
         for (PhoneNumber phoneNumber : phoneNumbersToAdd) {
-            if(checkIfPhoneNumberExists(phoneNumber.getPhoneNumber())) {
+            if (checkIfPhoneNumberExists(phoneNumber.getPhoneNumber())) {
                 changeProgramForPhoneNumber(phoneNumber, phoneNumber.getProgram());
             } else {
                 addPhoneNumber(phoneNumber, client);
@@ -530,8 +531,10 @@ public class ClientDB {
             throw new Exception("Error retrieving phone numbers from the database.", e);
         }
     }
+
     /**
      * Διαγράφει κάθε κλήση και SMS στη βάση για κάποιο αριθμό τηλεφώνου
+     *
      * @param phoneNumber ο αριθμός τηλεφώνου
      * @throws Exception εάν υπάρξει σφάλμα κατά τη διαγραφή των κλήσεων και SMS
      */
@@ -581,7 +584,7 @@ public class ClientDB {
 
             int rowsDeleted = statement.executeUpdate();
             if (rowsDeleted == 0) {
-                throw  new Exception("No call found with the given details.");
+                throw new Exception("No call found with the given details.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -1039,7 +1042,7 @@ public class ClientDB {
      * @param program     το πρόγραμμα
      * @throws SQLException εάν υπάρξει σφάλμα κατά την αλλαγή του προγράμματος
      */
-    public void changeProgramForPhoneNumber(PhoneNumber phoneNumber, Program program) throws SQLException{
+    public void changeProgramForPhoneNumber(PhoneNumber phoneNumber, Program program) throws SQLException {
         db.refreshConnection();
         phoneNumber.setProgram(program);
         String query = "UPDATE phonenumbers SET program_id = ? WHERE phone_number = ?";
@@ -1206,7 +1209,7 @@ public class ClientDB {
      * @throws Exception εάν υπάρξει σφάλμα κατά την ανάκτηση των πελατών
      */
     public ArrayList<Client> getAllClientsForSeller(Seller seller) throws Exception {
-        if(!seller.existInDB()){
+        if (!seller.existInDB()) {
             throw new Exception("Seller does not exist in the database.");
         }
         db.refreshConnection();
@@ -1256,6 +1259,37 @@ public class ClientDB {
             e.printStackTrace();
         }
         return clients;
+    }
+
+    /**
+     * Αναζήτηση λογαριασμού με βάση το ID του
+     *
+     * @param bill_ID το ID του λογαριασμού
+     * @return το λογαριασμό
+     */
+    public Bill searchBillByID(int bill_ID) throws Exception {
+        db.refreshConnection();
+        String query = "SELECT * FROM bills WHERE bill_id = ?";
+        Bill bill = new Bill();
+        try (Connection connection = db.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setInt(1, bill_ID);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    bill.setBillID(resultSet.getInt("bill_id"));
+                    bill.setTimeSpentTalking(resultSet.getInt("time_spent_talking"));
+                    bill.setTotalSMS(resultSet.getInt("total_sms"));
+                    bill.setTotalCost(resultSet.getDouble("total_cost"));
+                    bill.setDateIssued(resultSet.getDate("month_issued"));
+                    bill.setStatus(resultSet.getString("status"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bill;
     }
 }
 

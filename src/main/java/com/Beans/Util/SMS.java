@@ -11,6 +11,10 @@ public class SMS {
      */
     private  PhoneNumber phoneNumber;
     /**
+     * Ο αριθμός προς τον οποίο αποστέλλεται το μήνυμα.
+     */
+    private String receiverPhoneNumber;
+    /**
      * Η χρονική σήμανση.
      */
     private Date timeStamp;
@@ -23,6 +27,7 @@ public class SMS {
      * Δημιουργεί ένα νέο αντικείμενο SMS.
      */
     public SMS() {
+        this.receiverPhoneNumber = "693" + String.format("%07d", (int) (Math.random() * 10000000));
     }
 
     /**
@@ -46,6 +51,9 @@ public class SMS {
         else{
             throw new IllegalArgumentException("Not a valid phone number object");
         }
+    }
+    public String getReceiverPhoneNumber() {
+        return receiverPhoneNumber;
     }
 
     /**

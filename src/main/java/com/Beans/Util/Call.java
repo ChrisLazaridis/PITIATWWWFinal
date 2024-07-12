@@ -1,14 +1,19 @@
 package com.Beans.Util;
+
 import java.util.Date;
 
 /**
  * Η κλάση Call αντιπροσωπεύει μία κλήση.
  */
-public class Call implements java.io.Serializable{
+public class Call implements java.io.Serializable {
     /**
      * Ο αριθμός τηλεφώνου.
      */
     private PhoneNumber phoneNumber;
+    /**
+     * Ο αριθμός που έκανε τη κλήση.
+     */
+    private String callerPhoneNumber;
     /**
      * Η χρονική σήμανση.
      */
@@ -21,13 +26,19 @@ public class Call implements java.io.Serializable{
     /**
      * Δημιουργεί ένα νέο αντικείμενο Call.
      */
-    public Call() {}
+    public Call() {
+        this.callerPhoneNumber = "693" + String.format("%07d", (int) (Math.random() * 10000000));
+    }
 
     /**
      * Επιστρέφει τον αριθμό τηλεφώνου.
      *
      * @return ο αριθμός τηλεφώνου
      */
+    public String getCallerPhoneNumber() {
+        return callerPhoneNumber;
+    }
+
     public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
@@ -38,10 +49,9 @@ public class Call implements java.io.Serializable{
      * @param phoneNumber ο αριθμός τηλεφώνου
      */
     public void setPhoneNumber(Object phoneNumber) {
-        if(phoneNumber instanceof PhoneNumber){
+        if (phoneNumber instanceof PhoneNumber) {
             this.phoneNumber = (PhoneNumber) phoneNumber;
-        }
-        else{
+        } else {
             throw new IllegalArgumentException("Not a valid phone number object");
         }
     }
