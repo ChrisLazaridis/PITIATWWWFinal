@@ -23,11 +23,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="customcss.css">
 
     <title>Show All Clients</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">Seller Hub</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -111,6 +112,9 @@
                 </button>
                 <button type="button" class="btn btn-warning" onclick="confirmDeleteClient('<%=seller.getUsername()%>', '<%= c.getUsername() %>');">
                     Delete
+                </button>
+                <button type="button" class="btn btn-info" onclick="window.location.href='seller-servlet?action=editBills&clientUn=<%= c.getUsername()%>';">
+                    Edit Bills
                 </button>
             </td>
         </tr>

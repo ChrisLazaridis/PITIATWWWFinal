@@ -9,13 +9,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="3rd part v1">
+    <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="added Navbar everywhere">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/customcss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/editBills.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/SellerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/SellerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/AdminDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/AdminDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/SellerDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/SellerDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/addClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addClient.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addProgram.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addProgram.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addSeller.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addSeller.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/callHistory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/callHistory.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/client.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/client.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/editClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editClient.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/editProgram.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editProgram.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/editSeller.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editSeller.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/error.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/seller.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/showAllPrograms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/showAllPrograms.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/smsHistory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/smsHistory.jsp" afterDir="false" />
@@ -31,6 +46,7 @@
         <option value="module-info" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -77,23 +93,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.232.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/claza/PycharmProjects/DataFillerPITIATWWW&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.Tomcat 10.1.232.executor": "Run",
+    "git-widget-placeholder": "Master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/claza/PycharmProjects/DataFillerPITIATWWW",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="PITIATWWW2.1" />
@@ -233,7 +250,8 @@
       <workItem from="1719866785384" duration="231000" />
       <workItem from="1720785509238" duration="75000" />
       <workItem from="1720785612280" duration="14076000" />
-      <workItem from="1720823361893" duration="1731000" />
+      <workItem from="1720823361893" duration="1823000" />
+      <workItem from="1720870911091" duration="14591000" />
     </task>
     <task id="LOCAL-00001" summary="Made javadocs">
       <option name="closed" value="true" />
@@ -315,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720802434122</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added Navbar everywhere">
+      <option name="closed" value="true" />
+      <created>1720825181563</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720825181563</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +362,7 @@
     <MESSAGE value="Made javadocs" />
     <MESSAGE value="DDDDONE" />
     <MESSAGE value="3rd part v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="3rd part v1" />
+    <MESSAGE value="added Navbar everywhere" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Navbar everywhere" />
   </component>
 </project>

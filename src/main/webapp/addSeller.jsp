@@ -26,13 +26,38 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="customcss.css">
     <title>Add new Client</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Admin Hub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="admin-servlet?action=insertProgram">Add Program</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin-servlet?action=editProgram">Edit Programs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin-servlet?action=insertSeller">Add Seller</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" action="${pageContext.request.contextPath}/logout-servlet" method="get">
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
 <div class="container">
     <h1>Add Client</h1>
     <form method="POST" action='<%=request.getContextPath()%>/admin-servlet' name="frmAddClient">
-        <input type="hidden" name="action" value="insert"/>
+        <input type="hidden" name="action" value="insertSeller"/>
 
         <!-- First Name -->
         <div class="form-group row">

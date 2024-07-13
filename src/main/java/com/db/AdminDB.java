@@ -281,7 +281,7 @@ public class AdminDB {
 
         }
         db.refreshConnection();
-        String query = "INSERT INTO programs (program_name, program_name, fixed_cost, cost_per_minute, cost_per_sms, available_minutes, available_sms) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO programs (program_name, fixed_cost, cost_per_minute, cost_per_sms, available_minutes, available_sms) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection connection = db.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
@@ -435,6 +435,39 @@ public class AdminDB {
             e.printStackTrace();
         }
 
+    }
+    /**
+     * Διαγράφει ένα πρόγραμμα με βάση το ID του στη βάση
+     * @param programID το ID του προγράμματος
+     * @throws Exception εάν υπάρξει σφάλμα κατά την διαγραφή του προγράμματος
+     */
+    public void deleteProgramByID(int programID) throws Exception {
+        db.refreshConnection();
+        // set the program_id of all phonenumbers with the program to 11
+        String query = "UPDATE phonenumbers SET program_id = 11 WHERE program_id = ?";
+        try (Connection connection = db.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setInt(1, programID);
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        db.refreshConnection();
+        query = "DELETE FROM programs WHERE program_id = ?";
+
+        try (Connection connection = db.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setInt(1, programID);
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
     }
 
 }

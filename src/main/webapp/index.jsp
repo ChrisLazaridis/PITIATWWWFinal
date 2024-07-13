@@ -14,6 +14,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="customcss.css">
     <!-- Custom CSS -->
     <style>
         body {
@@ -22,33 +23,22 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Main Menu</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="login.jsp">Login</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
 <div class="container">
-    <div class="jumbotron mt-5">
-        <h1 class="display-4">Welcome to the Main Menu</h1>
-        <p class="lead">Choose an option from the menu below.</p>
+        <h1 class="display-4">Welcome</h1>
+        <p class="lead">This is the final assignment for the course of "Programming in the Internet and the WorldWide Web 2024 at the University of Piraeus</p>
+        <p class="lead">from Students</p>
+        <list class="block-list"">
+            <li>Alexandris Lampros: p22007</li>
+            <li>Lazaridis Christos-Lazaros: p22083</li>
+            <li>Osma Feti: p22126</li>
+            <li>Kalogeropoulos Athanasios: p22223</li>
+        </list>
         <hr class="my-4">
-        <ul class="list-unstyled">
+        <ul class="block-list">
             <li><a href="login.jsp" class="btn btn-primary btn-lg">Login</a></li>
         </ul>
-    </div>
 </div>
-
 <!-- Bootstrap JS and jQuery (optional, if you need Bootstrap JS functionality) -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

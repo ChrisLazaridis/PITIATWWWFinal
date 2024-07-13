@@ -1,5 +1,6 @@
 package com.Servlets;
 
+import com.Beans.Util.Bill;
 import com.Beans.Util.PhoneNumber;
 import com.Beans.Util.Program;
 import jakarta.servlet.RequestDispatcher;
@@ -43,6 +44,10 @@ public class SellerServlet extends HttpServlet {
      * Η σελίδα για την διαγραφή τηλεφώνου.
      */
     private static final String deletePhone = "/seller.jsp";
+    /**
+     * Η σελίδα για την επεξεργασία των λογαριασμών.
+     */
+    private static final String editBills = "/editBills.jsp";
     /**
      * Λίστα με τους αριθμούς τηλεφώνου του πελάτη.
      */
@@ -129,6 +134,11 @@ public class SellerServlet extends HttpServlet {
                 }
                 phoneNumbersOfClient = client.getPhoneNumbers();
                 request.setAttribute("client", client);
+            }else if(action.equalsIgnoreCase("editBills")){
+                forward = editBills;
+                String clientUn = request.getParameter("clientUn");
+                Client client = clientDB.searchClient(clientUn);
+                request.setAttribute("client", client);
             }
             else {
                 forward = ClientList;
@@ -171,6 +181,33 @@ public class SellerServlet extends HttpServlet {
             }
             boolean updatesPw = false;
             Seller seller = (Seller) session.getAttribute("seller");
+            if (action.equalsIgnoreCase("editBill")){
+                int billID = Integer.parseInt(request.getParameter("billID"));
+                String status = request.getParameter("status");
+                String totalSMS = request.getParameter("SMSSent");
+                ClientDB clientDB1 = new ClientDB();
+                Bill bill = clientDB1.searchBillByID(billID);
+                bill.setStatus(status);
+                bill.setTotalSMS(Integer.parseInt(totalSMS));
+                bill.setTimeSpentTalking(Integer.parseInt(request.getParameter("TimeSpentTalking")));
+                bill.setTotalCost(Double.parseDouble(request.getParameter("totalCost")));
+                try {
+                    clientDB1.updateBill(bill);
+                    seller.removeAllClients();
+                    phoneNumbersOfClient.clear();
+                    ArrayList<Client> clients = clientDB.getAllClientsForSeller(seller);
+                    for (Client c : clients) {
+                        seller.addClient(c);
+                    }
+                    request.setAttribute("seller", seller);
+                    RequestDispatcher view = request.getRequestDispatcher("seller.jsp"); // change to appropriate success view
+                    view.forward(request, response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    response.sendRedirect("error.jsp");
+                }
+
+            }
 
             client.setFirstName(request.getParameter("FirstName"));
             client.setLastName(request.getParameter("LastName"));
@@ -235,6 +272,10 @@ public class SellerServlet extends HttpServlet {
                 generateRandomPhoneNumber(client, program);
                 clientDB.addClient(client, seller);
                 seller.addClient(client);
+            }
+            else {
+                response.sendRedirect("error.jsp");
+                return;
             }
             // Update the seller in the session to reflect the changes
             seller.removeAllClients();

@@ -140,6 +140,7 @@ public class SellerDB {
                  PreparedStatement statement = connection.prepareStatement(query)) {
 
                 statement.setInt(1, seller.getSellerID());
+                System.out.println(seller.getSellerID());
 
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (!resultSet.next()) {
