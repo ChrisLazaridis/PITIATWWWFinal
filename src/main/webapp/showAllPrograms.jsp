@@ -2,9 +2,12 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.db.*" %>
 <%@ page import="com.Beans.Users.Client" %>
+<%@ page import="com.Beans.Users.Seller" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     ClientDB clientDB;
+    // Retrieve seller username from request attributes
+    Seller seller = (Seller) session.getAttribute("seller");
     try {
         clientDB = new ClientDB();
     } catch (Exception e) {
@@ -34,7 +37,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">Seller Hub</a>
+    <a class="navbar-brand" href="seller.jsp">Seller Hub</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -83,7 +86,6 @@
                 <% } %>
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success" onclick="window.location.href='seller.jsp';">Back to clients list</button>
         </div>
     </div>
 </div>
