@@ -88,7 +88,7 @@
 
     <form method="POST" action='<%=request.getContextPath()%>/admin-servlet' name="frmEditClient">
         <input type="hidden" name="action" value="editSeller"/>
-        <input type="text" name="SellerID" value="<%= sellerToEdit.getSellerID() %>"/>
+        <input type="hidde" name="SellerID" value="<%= sellerToEdit.getSellerID() %>"/>
 
         <!-- First Name -->
         <div class="form-group row">
