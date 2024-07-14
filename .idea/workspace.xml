@@ -10,119 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad422b90-5442-477a-b678-c8a657338c4d" name="Changes" comment="finished">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/Admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/Client.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/Seller.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/User.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/class-use/Admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/class-use/Client.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/class-use/Seller.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/class-use/User.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Users/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/Bill.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/Call.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/PhoneNumber.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/Program.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/SMS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/class-use/Bill.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/class-use/Call.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/class-use/PhoneNumber.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/class-use/Program.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/class-use/SMS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Beans/Util/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/AdminServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/ClientServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/LoginServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/LogoutServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/SellerServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/class-use/AdminServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/class-use/ClientServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/class-use/LoginServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/class-use/LogoutServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/class-use/SellerServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/Servlets/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/AdminDB.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/ClientDB.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/Database.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/SellerDB.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/class-use/AdminDB.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/class-use/ClientDB.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/class-use/Database.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/class-use/SellerDB.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/com/db/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docs/PITIATWWW/module-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~$cumentation.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Users/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Users/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Users/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Users/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Users/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Util/Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Util/Call.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Util/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Util/PhoneNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Beans/Util/SMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Beans/Util/SMS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/AdminServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/ClientServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/ClientServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Servlets/SellerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Servlets/SellerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/AdminDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/AdminDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/ClientDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/ClientDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/SellerDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/SellerDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addProgram.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addProgram.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addSeller.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addSeller.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/callHistory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/callHistory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/client.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/client.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/customcss.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/customcss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/editProgram.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editProgram.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/editSeller.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editSeller.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/smsHistory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/smsHistory.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,7 +239,7 @@
       <workItem from="1720823361893" duration="1823000" />
       <workItem from="1720870911091" duration="16400000" />
       <workItem from="1720893977804" duration="613000" />
-      <workItem from="1720911411356" duration="3821000" />
+      <workItem from="1720911411356" duration="4193000" />
     </task>
     <task id="LOCAL-00001" summary="Made javadocs">
       <option name="closed" value="true" />
@@ -465,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720894586004</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="finished">
+      <option name="closed" value="true" />
+      <created>1720915513444</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720915513444</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

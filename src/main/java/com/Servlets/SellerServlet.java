@@ -194,6 +194,7 @@ public class SellerServlet extends HttpServlet {
                     request.setAttribute("seller", seller);
                     RequestDispatcher view = request.getRequestDispatcher("seller.jsp"); // change to appropriate success view
                     view.forward(request, response);
+                    return;
                 } catch (Exception e) {
                     e.printStackTrace();
                     response.sendRedirect("error.jsp");
