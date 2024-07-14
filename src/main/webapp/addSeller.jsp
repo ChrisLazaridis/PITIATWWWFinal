@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: claza
-  Date: 7/12/2024
-  Time: 7:03 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page import="com.Beans.Util.Program" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.db.*" %>

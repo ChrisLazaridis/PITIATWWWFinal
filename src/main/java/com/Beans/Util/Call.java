@@ -11,9 +11,9 @@ public class Call implements java.io.Serializable {
      */
     private PhoneNumber phoneNumber;
     /**
-     * Ο αριθμός που έκανε τη κλήση.
+     * Ο αριθμός που έκανε την κλήση.
      */
-    private String callerPhoneNumber;
+    private final String callerPhoneNumber;
     /**
      * Η χρονική σήμανση.
      */

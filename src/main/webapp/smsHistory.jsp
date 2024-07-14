@@ -1,20 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: claza
-  Date: 7/12/2024
-  Time: 5:45 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.Beans.Users.Client" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.Beans.Util.Bill" %>
 <%@ page import="com.Beans.Util.PhoneNumber" %>
-<%@ page import="com.Beans.Util.Call" %>
 <%@ page import="java.time.LocalDateTime" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
-<%@ page import="java.time.ZoneId" %>
-<%@ page import="java.util.Date" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="com.Beans.Util.SMS" %>
 

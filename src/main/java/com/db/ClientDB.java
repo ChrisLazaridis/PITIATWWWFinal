@@ -6,7 +6,6 @@ import com.Beans.Util.*;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -175,7 +174,7 @@ public class ClientDB {
     }
 
     /**
-     * Ανανεώνει τα στοιχεία του πελάτη, όταν δεν χρειάζεται ανανέωση το συνθηματικό (password)
+     * Ανανεώνει τα στοιχεία του πελάτη, όταν δε χρειάζεται ανανέωση το συνθηματικό (password)
      *
      * @param client ο πελάτης
      * @throws Exception εάν υπάρξει σφάλμα κατά την ανανέωση του πελάτη
@@ -566,59 +565,7 @@ public class ClientDB {
     }
 
     /**
-     * Διαγράφει μια κλήση από τη βάση
-     *
-     * @param call η κλήση
-     * @throws Exception εάν υπάρξει σφάλμα κατά τη διαγραφή της κλήσης
-     */
-    public void deleteCall(Call call) throws Exception {
-        db.refreshConnection();
-        String query = "DELETE FROM calls WHERE phone_number = ? AND timestamp = ?";
-
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setString(1, call.getPhoneNumber().getPhoneNumber());
-            statement.setTimestamp(2, new java.sql.Timestamp(call.getTimestamp().getTime()));
-
-
-            int rowsDeleted = statement.executeUpdate();
-            if (rowsDeleted == 0) {
-                throw new Exception("No call found with the given details.");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new Exception("Error deleting call from the database.", e);
-        }
-    }
-
-    /**
-     * Διαγράφει ένα SMS από τη βάση
-     *
-     * @param sms the sms
-     * @throws Exception the exception
-     */
-    public void deleteSMS(SMS sms) throws Exception {
-        db.refreshConnection();
-        String query = "DELETE FROM sms WHERE phone_number = ? AND timestamp = ?";
-
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setString(1, sms.getPhoneNumber().getPhoneNumber());
-            statement.setTimestamp(2, new java.sql.Timestamp(sms.getTimeStamp().getTime()));
-            int rowsDeleted = statement.executeUpdate();
-            if (rowsDeleted == 0) {
-                throw new Exception("No SMS found with the given details.");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new Exception("Error deleting SMS from the database.", e);
-        }
-    }
-
-    /**
-     * Διαφράφει έναν αριθμό τηλεφώνου από τη βάση
+     * Διαγράφει έναν αριθμό τηλεφώνου από τη βάση
      *
      * @param phoneNumber ο αριθμός τηλεφώνου
      * @throws Exception εάν υπάρξει σφάλμα κατά τη διαγραφή του αριθμού τηλεφώνου
@@ -754,7 +701,7 @@ public class ClientDB {
     }
 
     /**
-     * Προσθέτει την σχέση πελάτη-πωλητή στη βάση
+     * Προσθέτει τη σχέση πελάτη-πωλητή στη βάση
      *
      * @param client ο πελάτης
      * @param seller ο πωλητής
@@ -834,100 +781,6 @@ public class ClientDB {
     }
 
     /**
-     * Δημιουργεί τον λογαριασμό του πελάτη για έναν συγκεκριμένο μήνα
-     *
-     * @param client ο πελάτης
-     * @param month  ο μήνας
-     * @throws Exception εάν υπάρξει σφάλμα κατά την ανάκτηση του πωλητή
-     */
-    public void createClientBill(Client client, Date month) throws Exception {
-        db.refreshConnection();
-        if (!client.existInDB()) {
-            throw new Exception("Client does not exist in the database.");
-        }
-
-        // Check if the client exists
-        String query = "SELECT * FROM clients WHERE client_id = ?";
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setInt(1, client.getClientId());
-
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (!resultSet.next()) {
-                    throw new Exception("Client does not exist in the database.");
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new Exception("Error verifying client existence in the database.", e);
-        }
-
-        // Call the stored procedure to calculate the bill
-        String sql = "{CALL CalculateBill(?, ?)}";
-        try (Connection connection = db.getConnection();
-             CallableStatement statement = connection.prepareCall(sql)) {
-
-            statement.setInt(1, client.getClientId());
-            statement.setDate(2, (java.sql.Date) month);
-
-            statement.execute();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new Exception("Error executing stored procedure to calculate bill.", e);
-        }
-    }
-
-    /**
-     * Προσθέτει μια κλήση στη βάση
-     *
-     * @param call η κλήση
-     * @throws Exception εάν υπάρξει σφάλμα κατά την προσθήκη της κλήσης
-     */
-    public void addCallToDB(Call call) throws Exception {
-        db.refreshConnection();
-        String query = "INSERT INTO calls (phone_number, duration, timestamp) VALUES (?, ?, ?)";
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setString(1, call.getPhoneNumber().getPhoneNumber());
-            statement.setInt(2, call.getDuration());
-            statement.setDate(3, new java.sql.Date(call.getTimestamp().getTime()));
-
-            statement.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-        }
-    }
-
-    /**
-     * Προσθέτει ένα SMS στη βάση
-     *
-     * @param sms το SMS
-     * @throws Exception εάν υπάρξει σφάλμα κατά την προσθήκη του SMS
-     */
-    public void addSMSToDB(SMS sms) throws Exception {
-        db.refreshConnection();
-        String query = "INSERT INTO sms (phone_number, message, timestamp) VALUES (?, ?, ?)";
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setString(1, sms.getPhoneNumber().getPhoneNumber());
-            statement.setString(2, sms.getMessage());
-            statement.setDate(3, new java.sql.Date(sms.getTimeStamp().getTime()));
-
-            statement.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-        }
-    }
-
-    /**
      * Ανακτά τις κλήσεις ενός αριθμού τηλεφώνου από τη βάση
      *
      * @param phoneNumber ο αριθμός τηλεφώνου
@@ -977,56 +830,6 @@ public class ClientDB {
                     sms.setMessage(resultSet.getString("message"));
                     sms.setTimeStamp(resultSet.getDate("timestamp"));
                     phoneNumber.addSMS(sms);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-        }
-    }
-
-    /**
-     * Ανακτά ένα πρόγραμμα για κάποιο αριθμό τηλεφώνου
-     *
-     * @param phoneNumber το ID του προγράμματος
-     * @throws Exception εάν υπάρξει σφάλμα κατά την ανάκτηση του προγράμματος
-     */
-    public void getProgram(PhoneNumber phoneNumber) throws Exception {
-        db.refreshConnection();
-        String query = "SELECT * FROM phonenumbers WHERE phone_number = ?";
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setString(1, phoneNumber.getPhoneNumber());
-
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    phoneNumber.setProgram(resultSet.getInt("program_id"));
-                    // Get the program details
-                    db.refreshConnection();
-                    query = "SELECT * FROM programs WHERE program_id = ?";
-                    try (Connection connection2 = db.getConnection();
-                         PreparedStatement statement2 = connection2.prepareStatement(query)) {
-
-                        statement2.setInt(1, phoneNumber.getProgram().getProgramID());
-
-                        try (ResultSet resultSet2 = statement2.executeQuery()) {
-                            if (resultSet2.next()) {
-                                Program program = new Program();
-                                program.setProgramID(resultSet2.getInt("program_id"));
-                                program.setProgramName(resultSet2.getString("program_name"));
-                                program.setFixedCost(resultSet2.getDouble("fixed_cost"));
-                                program.setCostPerMinute(resultSet2.getDouble("cost_per_minute"));
-                                program.setCostPerSMS(resultSet2.getDouble("cost_per_sms"));
-                                program.setAvailableMinutes(resultSet2.getInt("available_minutes"));
-                                program.setAvailableSMS(resultSet2.getInt("available_sms"));
-                                phoneNumber.setProgram(program);
-                            }
-                        }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-
-                    }
                 }
             }
         } catch (SQLException e) {
@@ -1096,43 +899,6 @@ public class ClientDB {
     }
 
     /**
-     * Αναζητά ένα πρόγραμμα με βάση το όνομά του
-     *
-     * @param name το όνομα του προγράμματος
-     * @return το πρόγραμμα
-     * @throws Exception εάν υπάρξει σφάλμα κατά την αναζήτηση του προγράμματος
-     */
-    public Program searchProgram(String name) throws Exception {
-        db.refreshConnection();
-        String query = "SELECT * FROM programs WHERE program_name = ?";
-
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setString(1, name);
-
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    Program program = new Program();
-                    program.setProgramName(resultSet.getString("program_name"));
-                    program.setFixedCost(resultSet.getDouble("fixed_cost"));
-                    program.setCostPerMinute(resultSet.getDouble("cost_per_minute"));
-                    program.setCostPerSMS(resultSet.getDouble("cost_per_sms"));
-                    program.setAvailableMinutes(resultSet.getInt("available_minutes"));
-                    program.setAvailableSMS(resultSet.getInt("available_sms"));
-                    program.setProgramID(resultSet.getInt("program_id"));
-                    return program;
-                } else {
-                    return null; // No program found
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new Exception("Error searching program in the database.", e);
-        }
-    }
-
-    /**
      * Επιστρέφει όλα τα προγράμματα από τη βάση
      *
      * @return τα προγράμματα
@@ -1163,42 +929,6 @@ public class ClientDB {
 
         }
         return programs;
-    }
-
-    /**
-     * Επιστρέφει όλους τους πελάτες από τη βάση
-     *
-     * @return οι πελάτες
-     * @throws Exception εάν υπάρξει σφάλμα κατά την ανάκτηση των πελατών
-     */
-    public ArrayList<Client> getAllClients() throws Exception {
-        db.refreshConnection();
-        String query = "SELECT * FROM clients";
-        ArrayList<Client> clients = new ArrayList<>();
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
-            try (ResultSet resultSet = statement.executeQuery()) {
-                while (resultSet.next()) {
-                    Client client = new Client();
-                    client.setUsername(resultSet.getString("username"));
-                    client.setFirstName(resultSet.getString("first_name"));
-                    client.setLastName(resultSet.getString("last_name"));
-                    client.setEmail(resultSet.getString("email"));
-                    client.setBirthday(resultSet.getDate("birthday"));
-                    client.setPassword(resultSet.getString("password_hash"));
-                    client.setClientID(resultSet.getInt("client_id"));
-                    client.setVAT(resultSet.getString("VAT"));
-                    client.setExistInDB(true);
-                    getPhoneNumbers(client);
-                    getClientBills(client);
-                    clients.add(client);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return clients;
     }
 
     /**
@@ -1265,7 +995,7 @@ public class ClientDB {
      * Αναζήτηση λογαριασμού με βάση το ID του
      *
      * @param bill_ID το ID του λογαριασμού
-     * @return το λογαριασμό
+     * @return τον λογαριασμό
      */
     public Bill searchBillByID(int bill_ID) throws Exception {
         db.refreshConnection();

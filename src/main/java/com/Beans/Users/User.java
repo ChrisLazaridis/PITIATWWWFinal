@@ -208,17 +208,4 @@ public class User implements java.io.Serializable {
         return true;
     }
 
-    /**
-     * Ελέγχει τη διεύθυνση email.
-     *
-     * @param email η διεύθυνση email
-     * @return true αν η διεύθυνση email είναι επιτρεπτή
-     * @throws IllegalArgumentException Εάν η διεύθυνση email δεν είναι έγκυρη
-     */
-    public static boolean isEmailValid(String email) {
-        if (!email.matches(".+@[a-zA-Z0-9]+%.[a-zA-Z]+")) {
-            throw new IllegalArgumentException("Email address is not valid");
-        }
-        return true;
-    }
 }

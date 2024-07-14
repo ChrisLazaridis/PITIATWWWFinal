@@ -13,7 +13,7 @@ public class SMS {
     /**
      * Ο αριθμός προς τον οποίο αποστέλλεται το μήνυμα.
      */
-    private String receiverPhoneNumber;
+    private final String receiverPhoneNumber;
     /**
      * Η χρονική σήμανση.
      */
@@ -57,7 +57,7 @@ public class SMS {
     }
 
     /**
-     * Επιστρέφει την χρονική σήμανση.
+     * Επιστρέφει τη χρονική σήμανση.
      *
      * @return η χρονική σήμανση
      */
@@ -66,7 +66,7 @@ public class SMS {
     }
 
     /**
-     * Θέτει την χρονική σήμανση.
+     * Θέτει τη χρονική σήμανση.
      *
      * @param timeStamp η χρονική σήμανση
      */

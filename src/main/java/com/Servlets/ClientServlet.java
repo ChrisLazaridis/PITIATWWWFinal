@@ -1,28 +1,21 @@
 package com.Servlets;
 
 import com.Beans.Util.Bill;
-import com.Beans.Util.PhoneNumber;
-import com.Beans.Util.Program;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.Serial;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 
 import com.Beans.Users.*;
 import com.db.*;
-
+/**
+ * Η κλάση ClientServlet εξυπηρετεί τις λειτουργίες του πελάτη.
+ */
 @WebServlet(name = "clientServlet", value = "/client-servlet")
 public class ClientServlet extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
-    private Database db;
 
     public ClientServlet() {
         super();
@@ -32,9 +25,15 @@ public class ClientServlet extends HttpServlet {
     public void init() {
     }
 
+    /**
+     * Η μέθοδος που καλείται όταν ο χρήστης κάνει Post request στον servlet.
+     * Υλοποιεί κυρίως λειτουργίες συνδεδεμένες με τη βάση
+     *
+     * @param request  an {@link HttpServletRequest} αντικείμενο που περιέχει το request που έστειλε ο client
+     * @param response an {@link HttpServletResponse} αντικείμενο που περιέχει το response που θα σταλεί στον client
+     */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         ClientDB clientDB;
 
         try {

@@ -17,11 +17,11 @@ public class PhoneNumber {
     /**
      * Τα μηνύματα.
      */
-    private ArrayList<SMS> sms = new ArrayList<SMS>();
+    private ArrayList<SMS> sms = new ArrayList<>();
     /**
      * Οι κλήσεις.
      */
-    private ArrayList<Call> calls = new ArrayList<Call>();
+    private final ArrayList<Call> calls = new ArrayList<>();
 
     /**
      * Δημιουργεί ένα νέο αντικείμενο PhoneNumber.
@@ -99,15 +99,6 @@ public class PhoneNumber {
     }
 
     /**
-     * Αφαιρεί ένα μήνυμα.
-     *
-     * @param sms το μήνυμα
-     */
-    public void removeSMS(SMS sms) {
-        this.sms.remove(sms);
-    }
-
-    /**
      * Επιστρέφει τις κλήσεις.
      *
      * @return οι κλήσεις
@@ -117,30 +108,12 @@ public class PhoneNumber {
     }
 
     /**
-     * Θέτει τις κλήσεις.
-     *
-     * @param calls οι κλήσεις
-     */
-    public void setCalls(ArrayList<Call> calls) {
-        this.calls = calls;
-    }
-
-    /**
      * Προσθέτει μία κλήση.
      *
      * @param call η κλήση
      */
     public void addCall(Call call) {
         this.calls.add(call);
-    }
-
-    /**
-     * Αφαιρεί μία κλήση.
-     *
-     * @param call η κλήση
-     */
-    public void removeCall(Call call) {
-        this.calls.remove(call);
     }
 
     /**

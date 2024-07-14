@@ -1,8 +1,6 @@
 <%@ page import="com.Beans.Util.Program" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.db.*" %>
-<%@ page import="com.Beans.Users.Client" %>
-<%@ page import="com.Beans.Users.Seller" %>
 <%@ page import="com.Beans.Users.Admin" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%

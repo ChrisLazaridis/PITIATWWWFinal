@@ -23,7 +23,7 @@ public class SellerDB {
     }
 
     /**
-     * προσθέτει έναν νέο πωλητή στη βάση δεδομένων.
+     * Προσθέτει έναν νέο πωλητή στη βάση δεδομένων.
      *
      * @param seller ο πωλητής που θα προστεθεί
      * @throws Exception εάν υπάρξει σφάλμα κατά την προσθήκη του πωλητή
@@ -177,7 +177,7 @@ public class SellerDB {
      * Διαγράφει έναν πωλητή από τη βάση δεδομένων.
      *
      * @param seller ο πωλητής που θα διαγραφεί
-     * @throws Exception εάν υπάρξει σφάλμα κατά την διαγραφή του πωλητή
+     * @throws Exception εάν υπάρξει σφάλμα κατά τη διαγραφή του πωλητή
      */
     public void deleteSeller(Seller seller) throws Exception {
         db.refreshConnection();
@@ -362,7 +362,7 @@ public class SellerDB {
         if(!admin.existInDB()){
             throw new Exception("Admin does not exist in the database.");
         }
-        ArrayList<Seller> sellers = new ArrayList<Seller>();
+        ArrayList<Seller> sellers = new ArrayList<>();
         // check if admin exists
         String query = "SELECT * FROM admins WHERE admin_id = ?";
         try (Connection connection = db.getConnection();
@@ -393,43 +393,6 @@ public class SellerDB {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return sellers;
-    }
-
-    /**
-     * Επιστρέφει όλους τους πωλητές.
-     *
-     * @return οι πωλητές
-     * @throws Exception εάν υπάρξει σφάλμα κατά την αναζήτηση των πωλητών
-     */
-    public ArrayList<Seller> getAllSellers() throws Exception{
-        db.refreshConnection();
-        ArrayList<Seller> sellers = new ArrayList<Seller>();
-        String query = "SELECT * FROM sellers";
-        try (Connection connection = db.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query);
-             ResultSet resultSet = statement.executeQuery()) {
-
-            while (resultSet.next()) {
-                Seller seller = new Seller();
-                seller.setUsername(resultSet.getString("username"));
-                seller.setFirstName(resultSet.getString("first_name"));
-                seller.setLastName(resultSet.getString("last_name"));
-                seller.setEmail(resultSet.getString("email"));
-                seller.setBirthday(resultSet.getDate("birthday"));
-                seller.setPassword(resultSet.getString("password_hash"));
-                seller.setSellerID(resultSet.getInt("seller_id"));
-                seller.setExistInDB(true);
-                ClientDB clientDB = new ClientDB();
-                ArrayList<Client> clients = clientDB.getAllClientsForSeller(seller);
-                for (Client client : clients) {
-                    seller.addClient(client);
-                }
-                sellers.add(seller);
-            }
-        } catch (SQLException e) {
             e.printStackTrace();
         }
         return sellers;

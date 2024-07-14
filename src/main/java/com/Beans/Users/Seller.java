@@ -14,7 +14,7 @@ public class Seller extends User {
     /**
      * Οι πελάτες του πωλητή.
      */
-    private ArrayList<Client> clientsBelow = new ArrayList<Client>();
+    private ArrayList<Client> clientsBelow = new ArrayList<>();
 
     /**
      * Δημιουργεί ένα νέο αντικείμενο Seller.
@@ -51,30 +51,12 @@ public class Seller extends User {
     }
 
     /**
-     * Θέτει τους πελάτες του πωλητή.
-     *
-     * @param clientsBelow οι πελάτες του πωλητή
-     */
-    public void setClientsBelow(ArrayList<Client> clientsBelow) {
-        this.clientsBelow = clientsBelow;
-    }
-
-    /**
      * Προσθέτει έναν πελάτη στον πωλητή.
      *
      * @param client ο πελάτης
      */
     public void addClient(Client client) {
         clientsBelow.add(client);
-    }
-
-    /**
-     * Αφαιρεί έναν πελάτη από τον πωλητή.
-     *
-     * @param client ο πελάτης
-     */
-    public void removeClient(Client client) {
-        clientsBelow.remove(client);
     }
 
     /**

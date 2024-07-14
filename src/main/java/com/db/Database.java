@@ -78,19 +78,6 @@ public class Database {
     }
 
     /**
-     * Κλείνει τη σύνδεση με τη βάση δεδομένων.
-     */
-    public void closeConnection() {
-        try {
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
      * Επιστρέφει το όνομα χρήστη στο server της MySQL.
      *
      * @return το όνομα χρήστη στο server της MySQL
@@ -106,24 +93,6 @@ public class Database {
      */
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    /**
-     * Επιστρέφει τη διεύθυνση του server της MySQL.
-     *
-     * @return η διεύθυνση του server της MySQL
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * Θέτει τη διεύθυνση του server της MySQL.
-     *
-     * @param url η διεύθυνση του server της MySQL
-     */
-    public void setUrl(String url) {
-        this.url = url;
     }
 
     /**

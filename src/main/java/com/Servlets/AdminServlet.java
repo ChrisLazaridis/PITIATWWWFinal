@@ -1,9 +1,7 @@
 package com.Servlets;
 
-import com.Beans.Util.PhoneNumber;
 import com.Beans.Util.Program;
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -11,19 +9,33 @@ import java.io.IOException;
 import java.io.Serial;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 import com.Beans.Users.*;
 import com.db.*;
 
+/**
+ * Η κλάση AdminServlet εξυπηρετεί τις λειτουργίες του διαχειριστή.
+ */
 @WebServlet(name = "adminServlet", value = "/admin-servlet")
 public class AdminServlet extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
+    /**
+     * Η σελίδα για την εισαγωγή νέου πωλητή.
+     */
     private static final String INSERT_SELLER = "/addSeller.jsp";
+    /**
+     * Η σελίδα για την επεξεργασία πωλητή.
+     */
     private static final String EDIT_SELLER = "/editSeller.jsp";
+    /**
+     * Η σελίδα για την εισαγωγή νέου προγράμματος.
+     */
     private static final String INSERT_PROGRAM = "/addProgram.jsp";
+    /**
+     * Η σελίδα για την επεξεργασία προγράμματος.
+     */
     private static final String EDIT_PROGRAM = "/editProgram.jsp";
     protected Database db;
 
@@ -34,12 +46,20 @@ public class AdminServlet extends HttpServlet {
         super();
     }
 
+    /**
+     * Η μέθοδος που καλείται όταν ο χρήστης κάνει GET request στον servlet.
+     * Υλοποιεί κυρίως τη μετάβαση ανάμεσα στα jsp της εφαρμογής.
+     * @param request an {@link HttpServletRequest} αντικείμενο που περιέχει το request που έστειλε ο client
+     *
+     * @param response an {@link HttpServletResponse} αντικείμενο που περιέχει το response που θα σταλεί στον client
+     *
+     */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String forward = "";
         SellerDB sellerDB = new SellerDB();
         AdminDB adminDB = new AdminDB();
-        String sellerName = "";
+        String sellerName;
         String action = request.getParameter("action");
         switch (action) {
             case "insertProgram":
@@ -96,9 +116,16 @@ public class AdminServlet extends HttpServlet {
         }
 
     }
-
+    /**
+     * Η μέθοδος που καλείται όταν ο χρήστης κάνει Post request στον servlet.
+     * Υλοποιεί κυρίως λειτουργίες συνδεδεμένες με τη βάση
+     * @param request an {@link HttpServletRequest} αντικείμενο που περιέχει το request που έστειλε ο client
+     *
+     * @param response an {@link HttpServletResponse} αντικείμενο που περιέχει το response που θα σταλεί στον client
+     *
+     */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String forward = "admin.jsp";
         SellerDB sellerDB = new SellerDB();
         AdminDB adminDB = new AdminDB();

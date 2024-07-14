@@ -14,7 +14,7 @@ public class Admin extends User implements java.io.Serializable{
     /**
      * Οι πωλητές του διαχειριστή.
      */
-    private ArrayList<Seller> sellersBelow = new ArrayList<Seller>();
+    private ArrayList<Seller> sellersBelow = new ArrayList<>();
 
     /**
      * Δημιουργεί ένα νέο αντικείμενο Admin.
@@ -51,15 +51,6 @@ public class Admin extends User implements java.io.Serializable{
     }
 
     /**
-     * Θέτει τους πωλητές του διαχειριστή.
-     *
-     * @param sellers_below οι πωλητές του διαχειριστή
-     */
-    public void setSellersBelow(ArrayList<Seller> sellers_below) {
-        this.sellersBelow = sellers_below;
-    }
-
-    /**
      * Προσθέτει έναν πωλητή στον διαχειριστή.
      *
      * @param seller ο πωλητής
@@ -68,12 +59,4 @@ public class Admin extends User implements java.io.Serializable{
         sellersBelow.add(seller);
     }
 
-    /**
-     * Αφαιρεί έναν πωλητή από τον διαχειριστή.
-     *
-     * @param seller ο πωλητής
-     */
-    public void removeSeller(Seller seller) {
-        sellersBelow.remove(seller);
-    }
 }

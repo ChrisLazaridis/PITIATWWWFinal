@@ -4,7 +4,6 @@ import com.Beans.Util.Bill;
 import com.Beans.Util.PhoneNumber;
 import com.Beans.Util.Program;
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
@@ -41,7 +40,7 @@ public class SellerServlet extends HttpServlet {
      */
     private static final String AddPhone = "/editClient.jsp";
     /**
-     * Η σελίδα για την διαγραφή τηλεφώνου.
+     * Η σελίδα για τη διαγραφή τηλεφώνου.
      */
     private static final String deletePhone = "/seller.jsp";
     /**
@@ -51,39 +50,32 @@ public class SellerServlet extends HttpServlet {
     /**
      * Λίστα με τους αριθμούς τηλεφώνου του πελάτη.
      */
-    private ArrayList<PhoneNumber> phoneNumbersOfClient = new ArrayList<PhoneNumber>();
-    /**
-     * Η σύνδεση με τη βάση δεδομένων.
-     */
-
-    private Database db;
+    private ArrayList<PhoneNumber> phoneNumbersOfClient = new ArrayList<>();
 
     /**
      * Αρχικοποιεί τον SellerServlet.
      */
     public SellerServlet() {
         super();
-        db = new Database();
     }
 
     @Override
     public void init() {}
     /**
-     * Εκτελεί τη μέθοδο doGet.
-     * Ελέγχει την ενέργεια που ζητήθηκε και καλεί την αντίστοιχη μέθοδο.
-     * Χρησιμοποιείτε κυρίως για την περιήγηση στις διάφορες σελίδες του συστήματος.
-     * @param request το αίτημα προς τον servlet
-     * @param response η απάντηση του servlet
-     * @throws IOException εάν υπάρξει σφάλμα εισόδου/εξόδου
+     * Η μέθοδος που καλείται όταν ο χρήστης κάνει GET request στον servlet.
+     * Υλοποιεί κυρίως τη μετάβαση ανάμεσα στα jsp της εφαρμογής.
+     * @param request an {@link HttpServletRequest} αντικείμενο που περιέχει το request που έστειλε ο client
+     *
+     * @param response an {@link HttpServletResponse} αντικείμενο που περιέχει το response που θα σταλεί στον client
+     *
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String forward = "";
+        String forward;
         String action = request.getParameter("action");
 
         try {
             ClientDB clientDB = new ClientDB();
-            SellerDB sellerDB = new SellerDB();
             HttpSession session = request.getSession(false);
             phoneNumbersOfClient.clear();
 
@@ -157,7 +149,7 @@ public class SellerServlet extends HttpServlet {
         }
     }
 
-        /**
+    /**
      * Εκτελεί τη μέθοδο doPost.
      * Ελέγχει την ενέργεια που ζητήθηκε και καλεί την αντίστοιχη μέθοδο.
      * Χρησιμοποιείτε για την εισαγωγή, ενημέρωση και διαγραφή πελάτη από το σύστημα.
@@ -166,7 +158,7 @@ public class SellerServlet extends HttpServlet {
      * @throws IOException εάν υπάρξει σφάλμα εισόδου/εξόδου
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String action = request.getParameter("action");
         Client client = new Client();
         ClientDB clientDB;

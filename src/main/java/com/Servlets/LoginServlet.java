@@ -9,7 +9,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-
+/**
+ * Η κλάση LoginServlet εξυπηρετεί την είσοδο των χρηστών στο σύστημα.
+ */
 @WebServlet(name = "loginServlet", value = "/login-servlet")
 public class LoginServlet extends HttpServlet {
     /**
@@ -58,6 +60,15 @@ public class LoginServlet extends HttpServlet {
             rd.forward(request, response);
         }
     }
+    /**
+     * Εκτελεί την είσοδο του πελάτη.
+     *
+     * @param request  το αίτημα προς το Servlet
+     * @param response η απάντηση του Servlet
+     * @param username το όνομα χρήστη του πελάτη
+     * @param password ο κωδικός πρόσβασης του πελάτη
+     * @param session  η τρέχουσα συνεδρία
+     */
     private void ClientLogin(HttpServletRequest request, HttpServletResponse response, String username, String password, HttpSession session) throws Exception {
         ClientDB clientDB = new ClientDB();
         Client client = clientDB.searchClient(username);
@@ -70,6 +81,15 @@ public class LoginServlet extends HttpServlet {
             rd.forward(request, response);
         }
     }
+    /**
+     * Εκτελεί την είσοδο του πωλητή.
+     *
+     * @param request  το αίτημα προς το Servlet
+     * @param response η απάντηση του Servlet
+     * @param username το όνομα χρήστη του πωλητή
+     * @param password ο κωδικός πρόσβασης του πωλητή
+     * @param session  η τρέχουσα συνεδρία
+     */
     private void SellerLogin(HttpServletRequest request, HttpServletResponse response, String username, String password, HttpSession session) throws Exception {
         SellerDB sellerDB = new SellerDB();
         Seller seller = sellerDB.searchSeller(username);
@@ -82,6 +102,15 @@ public class LoginServlet extends HttpServlet {
             rd.forward(request, response);
         }
     }
+    /**
+     * Εκτελεί την είσοδο του διαχειριστή.
+     *
+     * @param request  το αίτημα προς το Servlet
+     * @param response η απάντηση του Servlet
+     * @param username το όνομα χρήστη του διαχειριστή
+     * @param password ο κωδικός πρόσβασης του διαχειριστή
+     * @param session  η τρέχουσα συνεδρία
+     */
     private void AdminLogin(HttpServletRequest request, HttpServletResponse response, String username, String password, HttpSession session) throws Exception {
         AdminDB adminDB = new AdminDB();
         Admin admin = adminDB.searchAdmin(username);

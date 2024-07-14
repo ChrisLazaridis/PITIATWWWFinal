@@ -1,18 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: claza
-  Date: 7/12/2024
-  Time: 7:03 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.Beans.Users.Client" %>
 <%@ page import="com.Beans.Users.Seller" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="com.Beans.Util.Program" %>
-<%@ page import="com.Beans.Util.PhoneNumber" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="com.db.ClientDB" %>
 <%@ page import="com.Beans.Users.Admin" %>
 <%
 

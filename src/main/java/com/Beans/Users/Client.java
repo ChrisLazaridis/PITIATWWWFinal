@@ -16,7 +16,7 @@ public class Client extends User implements java.io.Serializable{
     /**
      * Οι αριθμοί τηλεφώνου του πελάτη.
      */
-    private ArrayList<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
+    private final ArrayList<PhoneNumber> phoneNumbers = new ArrayList<>();
     /**
      * Οι λογαριασμοί του πελάτη.
      */
@@ -24,7 +24,7 @@ public class Client extends User implements java.io.Serializable{
     /**
      * Οι λογαριασμοί του πελάτη.
      */
-    private ArrayList<Bill> bills = new ArrayList<Bill>();
+    private ArrayList<Bill> bills = new ArrayList<>();
 
     /**
      * Δημιουργεί ένα νέο αντικείμενο Client.
@@ -61,30 +61,12 @@ public class Client extends User implements java.io.Serializable{
     }
 
     /**
-     * Θέτει τους αριθμούς τηλεφώνου του πελάτη.
-     *
-     * @param phoneNumbers οι αριθμοί τηλεφώνου του πελάτη
-     */
-    public void setPhoneNumbers(ArrayList<PhoneNumber> phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
-    }
-
-    /**
      * Προσθέτει έναν αριθμό τηλεφώνου στον πελάτη.
      *
      * @param phoneNumber ο αριθμός τηλεφώνου
      */
     public void addPhoneNumber(PhoneNumber phoneNumber) {
         phoneNumbers.add(phoneNumber);
-    }
-
-    /**
-     * Αφαιρεί έναν αριθμό τηλεφώνου από τον πελάτη.
-     *
-     * @param phoneNumber ο αριθμός τηλεφώνου
-     */
-    public void removePhoneNumber(PhoneNumber phoneNumber) {
-        phoneNumbers.remove(phoneNumber);
     }
 
     /**
@@ -112,15 +94,6 @@ public class Client extends User implements java.io.Serializable{
      */
     public void addBill(Bill bill) {
         bills.add(bill);
-    }
-
-    /**
-     * Αφαιρεί ένα λογαριασμό από τον πελάτη.
-     *
-     * @param bill ο λογαριασμός
-     */
-    public void removeBill(Bill bill) {
-        bills.remove(bill);
     }
 
     /**
