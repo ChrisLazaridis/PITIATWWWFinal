@@ -18,7 +18,7 @@ public class Client extends User implements java.io.Serializable{
      */
     private final ArrayList<PhoneNumber> phoneNumbers = new ArrayList<>();
     /**
-     * Οι λογαριασμοί του πελάτη.
+     * Το ΑΦΜ του πελάτη
      */
     private String VAT;
     /**
