@@ -28,7 +28,7 @@
         <h1 class="display-4">Welcome</h1>
         <p class="lead">This is the final assignment for the course of "Programming in the Internet and the WorldWide Web 2024 at the University of Piraeus</p>
         <p class="lead">from Students</p>
-        <list class="block-list"">
+        <list class="block-list">
             <li>Alexandris Lampros: p22007</li>
             <li>Lazaridis Christos-Lazaros: p22083</li>
             <li>Osma Feti: p22126</li>

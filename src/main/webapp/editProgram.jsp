@@ -82,7 +82,7 @@
     </div>
 </nav>
 <div class="container">
-    <h1>Add Program</h1>
+    <h1>Edit Program</h1>
     <form method="POST" action='<%=request.getContextPath()%>/admin-servlet' name="frmAddClient">
         <input type="hidden" name="action" value="editProgram"/>
 
