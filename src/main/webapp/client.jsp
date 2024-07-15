@@ -38,6 +38,9 @@
                 <a class="nav-link" href="smsHistory.jsp">SMS History</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="thisMonth.jsp">This Month</a>
+            </li>
+            <li class="nav-item">
                 <form class="form-inline" action="${pageContext.request.contextPath}/logout-servlet" method="get">
                     <button class="btn btn-danger" type="submit">Logout</button>
                 </form>
